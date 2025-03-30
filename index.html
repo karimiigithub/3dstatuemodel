@@ -23,9 +23,11 @@
         scene.add(light);
 
         let loader = new THREE.FBXLoader();
-        loader.load('model.fbx', function (object) {
+        loader.load('base_0325013236_texture.fbx', function (object) {
             scene.add(object);
             object.position.set(0, 0, 0);
+        }, undefined, function (error) {
+            console.error('FBX yüklenirken hata oluştu:', error);
         });
 
         camera.position.z = 5;
